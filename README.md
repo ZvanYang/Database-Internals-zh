@@ -125,31 +125,31 @@ Database Internals:A Deep Dive into How Distributed Data Systems Work的中文�
 
 ##### 7. Log-Structured Storage.
 
-- LSM Trees 130 
-  - LSM Tree Structure 132 
-  - Updates and Deletes 136 
-  - LSM Tree Lookups 137 
-  - Merge-Iteration 137 
-  - Reconciliation 140 
-  - Maintenance in LSM Trees 141 
-- Read, Write, and Space Amplification 143 
-  - RUM Conjecture 144 
-  - Implementation Details 145 
-  - Sorted String Tables 145 
-  - Bloom Filters 146 
-  - Skiplist 148 
-  - Disk Access 150 
-  - Compression 151 
-- Unordered LSM Storage 152 
-  - Bitcask 153 
-  - WiscKey 154 
-- Concurrency in LSM Trees 155 
-- Log Stacking 157 
-  - Flash Translation Layer 157 
-  - Filesystem Logging 159 
-- LLAMA and Mindful Stacking 160 
-  - Open-Channel SSDs 161 
-- Summary 162
+- LSM Trees  
+  - LSM Tree Structure  
+  - Updates and Deletes  
+  - LSM Tree Lookups  
+  - Merge-Iteration  
+  - Reconciliation  
+  - Maintenance in LSM Trees  
+- Read, Write, and Space Amplification  
+  - RUM Conjecture  
+  - Implementation Details  
+  - Sorted String Tables  
+  - Bloom Filters  
+  - Skiplist  
+  - Disk Access  
+  - Compression  
+- Unordered LSM Storage  
+  - Bitcask  
+  - WiscKey  
+- Concurrency in LSM Trees  
+- Log Stacking  
+  - Flash Translation Layer  
+  - Filesystem Logging  
+- LLAMA and Mindful Stacking  
+  - Open-Channel SSDs  
+- Summary 
 
 ### Part I Conclusion
 
@@ -157,117 +157,119 @@ Database Internals:A Deep Dive into How Distributed Data Systems Work的中文�
 
 ##### 8. Introduction and Overview. . . 
 
-- Concurrent Execution 171 
-  - Shared State in a Distributed System 173 
-- Fallacies of Distributed Computing 174 
-  - Processing 175 
-  - Clocks and Time 176
-  - State Consistency 177 
-  - Local and Remote Execution 178 
-  - Need to Handle Failures 178 
-  - Network Partitions and Partial Failures 179 
-  - Cascading Failures 180
-- Distributed Systems Abstractions 181 
-  - Links 182 
-- Two Generals’ Problem 187 
-- FLP Impossibility 189 
-- System Synchrony 190 
-- Failure Models 191 
-  - Crash Faults 191 
-  - Omission Faults 192 
-  - Arbitrary Faults 193 
-  - Handling Failures 193 
-- Summary 193
+- Concurrent Execution  
+  - Shared State in a Distributed System  
+- Fallacies of Distributed Computing  
+  - Processing  
+  - Clocks and Time 
+  - State Consistency  
+  - Local and Remote Execution  
+  - Need to Handle Failures  
+  - Network Partitions and Partial Failures  
+  - Cascading Failures 
+- Distributed Systems Abstractions  
+  - Links  
+- Two Generals’ Problem  
+- FLP Impossibility  
+- System Synchrony  
+- Failure Models  
+  - Crash Faults  
+  - Omission Faults  
+  - Arbitrary Faults  
+  - Handling Failures  
+- Summary 
 
 ##### 9. Failure Detection. . .
 
-- Heartbeats and Pings 196 
-  - Timeout-Free Failure Detector 197 
-  - Outsourced Heartbeats 198 
-- Phi-Accural Failure Detector 199 
-- Gossip and Failure Detection 200 
-- Reversing Failure Detection Problem Statement 201 
-- Summary 202
+- Heartbeats and Pings  
+  - Timeout-Free Failure Detector  
+  - Outsourced Heartbeats  
+- Phi-Accural Failure Detector  
+- Gossip and Failure Detection  
+- Reversing Failure Detection Problem Statement  
+- Summary 
 
 ##### 10. Leader Election
 
-- Bully Algorithm 207 Next-In-Line Failover 208 
-- Candidate/Ordinary Optimization 209 
-- Invitation Algorithm 210 
-- Ring Algorithm 211 
-- Summary 212
+- Bully Algorithm  
+- Next-In-Line Failover  
+- Candidate/Ordinary Optimization  
+- Invitation Algorithm  
+- Ring Algorithm  
+- Summary 
 
 ##### 11. Replication and Consistency
 
-- Achieving Availability 216 
-- Infamous CAP 216
-  - Use CAP Carefully 217
-  - Harvest and Yield 218 
-- Shared Memory 219 
-- Ordering 221
-- Consistency Models 222
-  - Strict Consistency 223 
-  - Linearizability 223 
-  - Sequential Consistency 227 
-  - Causal Consistency 229
-- Session Models 233 
-- Eventual Consistency 234 
-- Tunable Consistency 235 
-- Witness Replicas 236 
-- Strong Eventual Consistency and CRDTs 238 
-- Summary 240
+- Achieving Availability  
+- Infamous CAP 
+  - Use CAP Carefully 
+  - Harvest and Yield  
+- Shared Memory  
+- Ordering 
+- Consistency Models 
+  - Strict Consistency  
+  - Linearizability  
+  - Sequential Consistency  
+  - Causal Consistency 
+- Session Models  
+- Eventual Consistency  
+- Tunable Consistency  
+- Witness Replicas  
+- Strong Eventual Consistency and CRDTs  
+- Summary 
 
 ##### 12. Anti-Entropy and Dissemination
 
-- Read Repair 245 
-- Digest Reads 246 
-- Hinted Handoff 246 
-- Merkle Trees 247 
-- Bitmap Version Vectors 248 
-- Gossip Dissemination 250
-  - Gossip Mechanics 251 
-  - Overlay Networks 251 
-  - Hybrid Gossip 253 
-  - Partial Views 254
-- Summary 255
+- Read Repair  
+- Digest Reads  
+- Hinted Handoff  
+- Merkle Trees  
+- Bitmap Version Vectors  
+- Gossip Dissemination 
+  - Gossip Mechanics  
+  - Overlay Networks  
+  - Hybrid Gossip  
+  - Partial Views 
+- Summary 
 
 13. ##### Distributed Transactions
 
-- Making Operations Appear Atomic 258 
-- Two-Phase Commit 259
-  - Cohort Failures in 2PC 261
-  - Coordinator Failures in 2PC 262 
-- Three-Phase Commit 264 
-  - Coordinator Failures in 3PC 265 
-- Distributed Transactions with Calvin 266 
-- Distributed Transactions with Spanner 268 
-- Database Partitioning 270 
-  - Consistent Hashing 271 
-- Distributed Transactions with Percolator 272 
-- Coordination Avoidance 275 
-- Summary 277
+- Making Operations Appear Atomic  
+- Two-Phase Commit 
+  - Cohort Failures in 2PC 
+  - Coordinator Failures in 2PC  
+- Three-Phase Commit  
+  - Coordinator Failures in 3PC  
+- Distributed Transactions with Calvin  
+- Distributed Transactions with Spanner  
+- Database Partitioning  
+  - Consistent Hashing  
+- Distributed Transactions with Percolator  
+- Coordination Avoidance  
+- Summary 
 
 ##### 14. Consensus
 
-- Broadcast 280 
-- Atomic Broadcast 281
-  - Virtual Synchrony 282
-  - Zookeeper Atomic Broadcast (ZAB) 283 
-- Paxos 285 
-  - Paxos Algorithm 286 
-  - Quorums in Paxos 287 
-  - Failure Scenarios 288 Multi-Paxos 291 
-  - Fast Paxos 292 
-  - Egalitarian Paxos 293 
-  - Flexible Paxos 296 
-  - Generalized Solution to Consensus 297 
+- Broadcast  
+- Atomic Broadcast 
+  - Virtual Synchrony 
+  - Zookeeper Atomic Broadcast (ZAB)  
+- Paxos  
+  - Paxos Algorithm  
+  - Quorums in Paxos  
+  - Failure Scenarios  
+  - Multi-Paxos  
+  - Fast Paxos  
+  - Egalitarian Paxos  
+  - Flexible Paxos  
+  - Generalized Solution to Consensus  
 - Raft 300 
-  - Leader Role in Raft 302 
-  - Failure Scenarios 304
-- Byzantine Consensus 305 
-  - PBFT Algorithm 306 
-  - Recovery and Checkpointing 309 
-- Summary 309
+  - Leader Role in Raft  
+  - Failure Scenarios 
+- Byzantine Consensus  
+  - PBFT Algorithm  
+  - Recovery and Checkpointing  
+- Summary 
 
 ### Part II Conclusion
 
