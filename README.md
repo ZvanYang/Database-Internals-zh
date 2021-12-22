@@ -41,7 +41,7 @@ Database Internals:A Deep Dive into How Distributed Data Systems Work的中文�
   - B-Tree Node Merges
 - Summary
 
-##### 3. File Formats. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 45
+##### 3. File Formats
 
 - Motivation
 - Binary Encoding
@@ -102,7 +102,7 @@ Database Internals:A Deep Dive into How Distributed Data Systems Work的中文�
   - Lock-Based Concurrency Control
 - Summary
 
-##### \6. B-Tree Variants. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+##### 6. B-Tree Variants
 
 - Copy-on-Write
   - Implementing Copy-on-Write: LMDB 
@@ -126,24 +126,29 @@ Database Internals:A Deep Dive into How Distributed Data Systems Work的中文�
 ##### 7. Log-Structured Storage.
 
 - LSM Trees 130 
-- LSM Tree Structure 132 
-- Updates and Deletes 136 
-- LSM Tree Lookups 137 
-- Merge-Iteration 137 
-- Reconciliation 140 Maintenance in LSM Trees 141 
+  - LSM Tree Structure 132 
+  - Updates and Deletes 136 
+  - LSM Tree Lookups 137 
+  - Merge-Iteration 137 
+  - Reconciliation 140 
+  - Maintenance in LSM Trees 141 
 - Read, Write, and Space Amplification 143 
-- RUM Conjecture 144 Implementation Details 145 
-- Sorted String Tables 145 Bloom Filters 146 
-- Skiplist 148 Disk Access 150 
-- Compression 151 
+  - RUM Conjecture 144 
+  - Implementation Details 145 
+  - Sorted String Tables 145 
+  - Bloom Filters 146 
+  - Skiplist 148 
+  - Disk Access 150 
+  - Compression 151 
 - Unordered LSM Storage 152 
-- Bitcask 153 WiscKey 154 
+  - Bitcask 153 
+  - WiscKey 154 
 - Concurrency in LSM Trees 155 
 - Log Stacking 157 
-- Flash Translation Layer 157 
-- Filesystem Logging 159 
+  - Flash Translation Layer 157 
+  - Filesystem Logging 159 
 - LLAMA and Mindful Stacking 160 
-- Open-Channel SSDs 161 
+  - Open-Channel SSDs 161 
 - Summary 162
 
 ### Part I Conclusion
@@ -153,32 +158,32 @@ Database Internals:A Deep Dive into How Distributed Data Systems Work的中文�
 ##### 8. Introduction and Overview. . . 
 
 - Concurrent Execution 171 
-- Shared State in a Distributed System 173 
+  - Shared State in a Distributed System 173 
 - Fallacies of Distributed Computing 174 
-- Processing 175 
-- Clocks and Time 176
-- viii | Table of Contents
-- State Consistency 177 
-- Local and Remote Execution 178 
-- Need to Handle Failures 178 
-- Network Partitions and Partial Failures 179 
-- Cascading Failures 180
+  - Processing 175 
+  - Clocks and Time 176
+  - State Consistency 177 
+  - Local and Remote Execution 178 
+  - Need to Handle Failures 178 
+  - Network Partitions and Partial Failures 179 
+  - Cascading Failures 180
 - Distributed Systems Abstractions 181 
-- Links 182 Two Generals’ Problem 187 
+  - Links 182 
+- Two Generals’ Problem 187 
 - FLP Impossibility 189 
 - System Synchrony 190 
 - Failure Models 191 
-- Crash Faults 191 
-- Omission Faults 192 
-- Arbitrary Faults 193 
-- Handling Failures 193 
+  - Crash Faults 191 
+  - Omission Faults 192 
+  - Arbitrary Faults 193 
+  - Handling Failures 193 
 - Summary 193
 
 ##### 9. Failure Detection. . .
 
 - Heartbeats and Pings 196 
-- Timeout-Free Failure Detector 197 
-- Outsourced Heartbeats 198 
+  - Timeout-Free Failure Detector 197 
+  - Outsourced Heartbeats 198 
 - Phi-Accural Failure Detector 199 
 - Gossip and Failure Detection 200 
 - Reversing Failure Detection Problem Statement 201 
@@ -196,14 +201,15 @@ Database Internals:A Deep Dive into How Distributed Data Systems Work的中文�
 
 - Achieving Availability 216 
 - Infamous CAP 216
-- Use CAP Carefully 217
-- Harvest and Yield 218 Shared Memory 219 
+  - Use CAP Carefully 217
+  - Harvest and Yield 218 
+- Shared Memory 219 
 - Ordering 221
 - Consistency Models 222
-- Strict Consistency 223 
-- Linearizability 223 
-- Sequential Consistency 227 
-- Causal Consistency 229
+  - Strict Consistency 223 
+  - Linearizability 223 
+  - Sequential Consistency 227 
+  - Causal Consistency 229
 - Session Models 233 
 - Eventual Consistency 234 
 - Tunable Consistency 235 
@@ -219,22 +225,24 @@ Database Internals:A Deep Dive into How Distributed Data Systems Work的中文�
 - Merkle Trees 247 
 - Bitmap Version Vectors 248 
 - Gossip Dissemination 250
-- Gossip Mechanics 251 Overlay Networks 251 
-- Hybrid Gossip 253 
-- Partial Views 254
+  - Gossip Mechanics 251 
+  - Overlay Networks 251 
+  - Hybrid Gossip 253 
+  - Partial Views 254
 - Summary 255
 
 13. ##### Distributed Transactions
 
 - Making Operations Appear Atomic 258 
 - Two-Phase Commit 259
-- Cohort Failures in 2PC 261
-- Coordinator Failures in 2PC 262 
+  - Cohort Failures in 2PC 261
+  - Coordinator Failures in 2PC 262 
 - Three-Phase Commit 264 
-- Coordinator Failures in 3PC 265 
+  - Coordinator Failures in 3PC 265 
 - Distributed Transactions with Calvin 266 
 - Distributed Transactions with Spanner 268 
-- Database Partitioning 270 Consistent Hashing 271 
+- Database Partitioning 270 
+  - Consistent Hashing 271 
 - Distributed Transactions with Percolator 272 
 - Coordination Avoidance 275 
 - Summary 277
@@ -243,18 +251,22 @@ Database Internals:A Deep Dive into How Distributed Data Systems Work的中文�
 
 - Broadcast 280 
 - Atomic Broadcast 281
-- Virtual Synchrony 282
-- Zookeeper Atomic Broadcast (ZAB) 283 
-- Paxos 285 Paxos Algorithm 286 
-- Quorums in Paxos 287 
-- Failure Scenarios 288 Multi-Paxos 291 
-- Fast Paxos 292 Egalitarian Paxos 293 
-- Flexible Paxos 296 
-- Generalized Solution to Consensus 297 
-- Raft 300 Leader Role in Raft 302 
-- Failure Scenarios 304 Byzantine Consensus 305 
-- PBFT Algorithm 306 
-- Recovery and Checkpointing 309 
+  - Virtual Synchrony 282
+  - Zookeeper Atomic Broadcast (ZAB) 283 
+- Paxos 285 
+  - Paxos Algorithm 286 
+  - Quorums in Paxos 287 
+  - Failure Scenarios 288 Multi-Paxos 291 
+  - Fast Paxos 292 
+  - Egalitarian Paxos 293 
+  - Flexible Paxos 296 
+  - Generalized Solution to Consensus 297 
+- Raft 300 
+  - Leader Role in Raft 302 
+  - Failure Scenarios 304
+- Byzantine Consensus 305 
+  - PBFT Algorithm 306 
+  - Recovery and Checkpointing 309 
 - Summary 309
 
 ### Part II Conclusion
